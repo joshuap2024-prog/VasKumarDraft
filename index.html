@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vas Kumar & Co. | Advocates & Solicitors</title>
+  <meta name="description" content="Vas Kumar & Co. provides clear, practical legal counsel for litigation, dispute resolution, corporate advisory, and business advisory matters." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f4f7f6;
+      --linen: #e3ecea;
+      --mist: #fbfcfb;
+      --charcoal: #101820;
+      --ink: #243238;
+      --muted: #667477;
+      --teal: #0f5c63;
+      --teal-dark: #0a3e43;
+      --copper: #b35d3f;
+      --line: rgba(15, 92, 99, 0.22);
+      --white: #ffffff;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .skip-link {
+      background: var(--charcoal);
+      color: var(--paper);
+      left: 1rem;
+      padding: .65rem .9rem;
+      position: fixed;
+      top: -4rem;
+      z-index: 999;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    .top-bar {
+      align-items: center;
+      background: var(--charcoal);
+      color: rgba(247, 242, 234, .72);
+      display: flex;
+      font-size: .78rem;
+      gap: 1.4rem;
+      justify-content: flex-end;
+      letter-spacing: .03em;
+      padding: .45rem clamp(1.2rem, 5vw, 4.5rem);
+    }
+
+    .top-bar a:hover {
+      color: var(--paper);
+    }
+
+    .site-nav {
+      align-items: center;
+      background: rgba(247, 242, 234, .96);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      padding: 1.05rem clamp(1.2rem, 5vw, 4.5rem);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .brand {
+      color: var(--charcoal);
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--copper);
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: .2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      display: block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      padding: .5rem .85rem;
+      text-transform: uppercase;
+      transition: color .2s var(--ease);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--charcoal);
+    }
+
+    .nav-links .nav-cta {
+      background: var(--teal);
+      color: var(--paper);
+      margin-left: .45rem;
+      padding: .65rem 1rem;
+    }
+
+    .nav-links .nav-cta:hover {
+      background: var(--charcoal);
+      color: var(--paper);
+    }
+
+    .menu-toggle {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      height: 2rem;
+      position: relative;
+      width: 2rem;
+    }
+
+    .menu-toggle span {
+      background: var(--charcoal);
+      display: block;
+      height: 2px;
+      left: .25rem;
+      position: absolute;
+      width: 1.5rem;
+    }
+
+    .menu-toggle span:nth-child(1) { top: .55rem; }
+    .menu-toggle span:nth-child(2) { top: .95rem; }
+    .menu-toggle span:nth-child(3) { top: 1.35rem; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
+      min-height: calc(100vh - 96px);
+    }
+
+    .hero-copy {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 7vw, 6.5rem) clamp(1.5rem, 6vw, 5rem);
+    }
+
+    .eyebrow,
+    .section-label {
+      align-items: center;
+      color: var(--copper);
+      display: inline-flex;
+      font-size: .72rem;
+      font-weight: 700;
+      gap: .65rem;
+      letter-spacing: .2em;
+      margin-bottom: 1.1rem;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .section-label::before {
+      background: var(--copper);
+      content: "";
+      display: block;
+      height: 1px;
+      width: 1.6rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--charcoal);
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: 1.08;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      letter-spacing: 0;
+      max-width: 10ch;
+    }
+
+    h1 em,
+    h2 em {
+      color: var(--copper);
+      font-style: italic;
+    }
+
+    .hero-intro {
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.12rem);
+      margin-top: 1.35rem;
+      max-width: 42rem;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: .5rem;
+      list-style: none;
+      margin: 1.7rem 0 2.2rem;
+    }
+
+    .hero-points li {
+      color: var(--muted);
+      font-size: .95rem;
+      padding-left: 1.35rem;
+      position: relative;
+    }
+
+    .hero-points li::before {
+      color: var(--copper);
+      content: "/";
+      font-weight: 700;
+      left: 0;
+      position: absolute;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+    }
+
+    .button {
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      font-size: .78rem;
+      font-weight: 800;
+      justify-content: center;
+      letter-spacing: .12em;
+      min-height: 3rem;
+      padding: .85rem 1.45rem;
+      text-transform: uppercase;
+      transition: background .2s var(--ease), border .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--teal);
+      color: var(--paper);
+    }
+
+    .button-primary:hover {
+      background: var(--charcoal);
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .hero-media {
+      background: var(--linen);
+      min-height: 34rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-media img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .hero-note,
+    .hero-badge {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .hero-note {
+      background: rgba(31, 33, 29, .82);
+      color: rgba(247, 242, 234, .78);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      line-height: 1.55;
+      max-width: 14rem;
+      padding: .85rem 1rem;
+      right: 1.5rem;
+      text-transform: uppercase;
+      top: 1.5rem;
+    }
+
+    .hero-badge {
+      background: var(--teal);
+      bottom: 1.5rem;
+      color: var(--paper);
+      font-size: .75rem;
+      font-weight: 700;
+      left: 1.5rem;
+      letter-spacing: .1em;
+      padding: .75rem 1rem;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem);
+    }
+
+    .section-heading {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      max-width: 11ch;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 1rem;
+      max-width: 48rem;
+    }
+
+    .about {
+      background: var(--charcoal);
+      color: var(--paper);
+      text-align: center;
+    }
+
+    .about .section-label {
+      color: var(--copper);
+      justify-content: center;
+    }
+
+    .about .section-label::before {
+      background: var(--copper);
+    }
+
+    .about h2 {
+      color: var(--paper);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      margin: 0 auto;
+      max-width: 15ch;
+    }
+
+    .about p {
+      color: rgba(247, 242, 234, .68);
+      margin: 1.3rem auto 0;
+      max-width: 58rem;
+    }
+
+    .cred-row {
+      border: 1px solid rgba(15, 92, 99, .28);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 3rem auto 0;
+      max-width: 900px;
+    }
+
+    .cred {
+      padding: 1.7rem 1.2rem;
+    }
+
+    .cred + .cred {
+      border-left: 1px solid rgba(15, 92, 99, .28);
+    }
+
+    .cred strong {
+      color: var(--paper);
+      display: block;
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .cred span {
+      color: rgba(247, 242, 234, .46);
+      display: block;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      margin-top: .55rem;
+      text-transform: uppercase;
+    }
+
+    .practice-header,
+    .why {
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: .8fr 1.2fr;
+    }
+
+    .practice-grid {
+      background: var(--line);
+      border: 1px solid var(--line);
+      display: grid;
+      gap: 1px;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 3rem;
+    }
+
+    .practice-card {
+      background: var(--paper);
+      min-height: 17rem;
+      padding: 2.2rem;
+      transition: background .25s var(--ease), color .25s var(--ease);
+    }
+
+    .practice-card:hover {
+      background: var(--teal);
+    }
+
+    .practice-card .card-mark {
+      color: var(--copper);
+      display: block;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      margin-bottom: 1rem;
+    }
+
+    .practice-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: .8rem;
+    }
+
+    .practice-card p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .practice-card:hover h3,
+    .practice-card:hover p,
+    .practice-card:hover .card-mark {
+      color: var(--paper);
+    }
+
+    .why {
+      background: var(--linen);
+      align-items: start;
+    }
+
+    .why-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .why-item {
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: 3.25rem 1fr;
+      padding: 1.45rem 0;
+    }
+
+    .why-number {
+      color: var(--copper);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+    }
+
+    .why-item h3 {
+      font-size: 1.35rem;
+      margin-bottom: .35rem;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .process {
+      background: var(--mist);
+    }
+
+    .process-grid {
+      display: grid;
+      gap: 1px;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      border-right: 1px solid var(--line);
+      padding: 0 2.2rem;
+    }
+
+    .process-step:first-child {
+      padding-left: 0;
+    }
+
+    .process-step:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+
+    .step-number {
+      color: rgba(15, 92, 99, .26);
+      font-family: var(--serif);
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .process-step h3 {
+      font-size: 1.45rem;
+      margin-bottom: .7rem;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .faq {
+      background: var(--paper);
+    }
+
+    .faq-layout {
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: .8fr 1.2fr;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: .85rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .22);
+    }
+
+    .faq-question {
+      align-items: center;
+      background: transparent;
+      border: 0;
+      color: var(--charcoal);
+      cursor: pointer;
+      display: flex;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      justify-content: space-between;
+      padding: 1.15rem 1.25rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    .faq-question span {
+      color: var(--copper);
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      margin-left: 1rem;
+      transition: transform .2s var(--ease);
+    }
+
+    .faq-item.open .faq-question span {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .28s var(--ease);
+    }
+
+    .faq-answer-inner {
+      color: var(--muted);
+      font-size: .92rem;
+      padding: 0 1.25rem 1.25rem;
+    }
+
+    .contact {
+      background: var(--charcoal);
+      color: var(--paper);
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: var(--paper);
+      font-size: clamp(2.35rem, 5vw, 4.5rem);
+      margin: 0 auto;
+      max-width: 13ch;
+    }
+
+    .contact .section-label {
+      justify-content: center;
+    }
+
+    .contact .section-intro {
+      color: rgba(247, 242, 234, .64);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-grid {
+      border: 1px solid rgba(15, 92, 99, .28);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 3rem 0;
+      text-align: left;
+    }
+
+    .contact-card {
+      padding: 2rem;
+    }
+
+    .contact-card + .contact-card {
+      border-left: 1px solid rgba(15, 92, 99, .28);
+    }
+
+    .contact-card h3 {
+      color: var(--copper);
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      margin-bottom: .8rem;
+      text-transform: uppercase;
+    }
+
+    .contact-card p,
+    .contact-card a {
+      color: rgba(247, 242, 234, .7);
+      display: block;
+      font-size: .95rem;
+    }
+
+    .contact-card a:hover {
+      color: var(--paper);
+    }
+
+    footer {
+      align-items: center;
+      background: #141512;
+      color: rgba(247, 242, 234, .38);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-between;
+      padding: 2.25rem clamp(1.5rem, 6vw, 5rem);
+    }
+
+    .footer-brand {
+      color: var(--copper);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+    }
+
+    .back-to-top {
+      align-items: center;
+      background: var(--charcoal);
+      border: 1px solid rgba(247, 242, 234, .14);
+      bottom: 1.1rem;
+      color: var(--paper);
+      cursor: pointer;
+      display: flex;
+      height: 2.75rem;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      position: fixed;
+      right: 1.1rem;
+      transform: translateY(10px);
+      transition: opacity .2s var(--ease), transform .2s var(--ease);
+      width: 2.75rem;
+      z-index: 40;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s var(--ease), transform .65s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .top-bar {
+        display: none;
+      }
+
+      .site-nav {
+        padding: .95rem 1.2rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        align-items: stretch;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+        display: none;
+        flex-direction: column;
+        left: 0;
+        padding: 1rem 1.2rem;
+        position: absolute;
+        right: 0;
+        top: 100%;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a,
+      .nav-links .nav-cta {
+        margin: 0;
+        padding: .85rem 0;
+      }
+
+      .hero,
+      .practice-header,
+      .why,
+      .faq-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 0;
+      }
+
+      .hero-media {
+        min-height: 24rem;
+        order: -1;
+      }
+
+      h1 {
+        max-width: 12ch;
+      }
+
+      .practice-grid,
+      .process-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .practice-card {
+        min-height: auto;
+      }
+
+      .process-step,
+      .process-step:first-child,
+      .process-step:last-child {
+        border-bottom: 1px solid var(--line);
+        border-right: 0;
+        padding: 1.6rem 0;
+      }
+
+      .process-step:last-child {
+        border-bottom: 0;
+      }
+
+      .contact-card + .contact-card,
+      .cred + .cred {
+        border-left: 0;
+        border-top: 1px solid rgba(15, 92, 99, .28);
+      }
+
+      .cred-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-copy {
+        padding: 2.8rem 1.2rem 3.5rem;
+      }
+
+      section {
+        padding: 4rem 1.2rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-note {
+        left: 1rem;
+        max-width: calc(100% - 2rem);
+        right: 1rem;
+      }
+
+      .hero-badge {
+        bottom: 1rem;
+        left: 1rem;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="top-bar">
+    <a href="tel:+6562251171">Call: +65 6225 1171</a>
+    <a href="mailto:kumarlaw@singnet.com.sg">Email: kumarlaw@singnet.com.sg</a>
+  </div>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href="#main" class="brand">Vas Kumar <span>&amp;</span> Co.</a>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#practice">Practice</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Advocates & Solicitors</p>
+        <h1 id="hero-title">Clear Legal Counsel, <em>Carefully Delivered</em></h1>
+        <p class="hero-intro">Vas Kumar & Co. helps clients make confident decisions in litigation, dispute resolution, corporate advisory, and business advisory matters through practical advice, careful preparation, and steady representation.</p>
+        <ul class="hero-points">
+          <li>Responsive legal guidance for urgent and complex matters</li>
+          <li>Focused support across litigation, disputes, corporate matters, and business advisory work</li>
+          <li>Direct communication from consultation through resolution</li>
+        </ul>
+        <div class="button-row">
+          <a href="#contact" class="button button-primary">Book Consultation</a>
+          <a href="#practice" class="button button-secondary">View Practice Areas</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img
+          src="https://images.pexels.com/photos/30157186/pexels-photo-30157186.jpeg?auto=compress&cs=tinysrgb&w=1400"
+          alt="Modern Singapore commercial skyline"
+        />
+        <div class="hero-note">Commercially minded counsel for disputes and advisory matters</div>
+        <div class="hero-badge">Vas Kumar & Co.</div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <p class="section-label">About The Firm</p>
+      <h2>Practical legal support with a <em>personal standard of care</em></h2>
+      <p>Legal problems often arrive with pressure, uncertainty, and a need for clear next steps. Vas Kumar & Co. is built around calm counsel, careful documents, and representation that keeps the client informed at every stage.</p>
+      <div class="cred-row" aria-label="Firm values">
+        <div class="cred">
+          <strong>Clear</strong>
+          <span>Advice</span>
+        </div>
+        <div class="cred">
+          <strong>Careful</strong>
+          <span>Preparation</span>
+        </div>
+        <div class="cred">
+          <strong>Steady</strong>
+          <span>Advocacy</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="practice">
+      <div class="practice-header">
+        <div>
+          <p class="section-label">Practice Areas</p>
+          <h2 class="section-heading">Focused expertise for <em>disputes and business</em></h2>
+        </div>
+        <p class="section-intro">The firm's work is centred on litigation and dispute resolution, including corporate and business advisory support for clients who need clear legal direction.</p>
+      </div>
+
+      <div class="practice-grid">
+        <article class="practice-card reveal">
+          <span class="card-mark">01</span>
+          <h3>Litigation</h3>
+          <p>Representation and case strategy for contested matters, with careful preparation from early assessment through hearings and resolution.</p>
+        </article>
+        <article class="practice-card reveal">
+          <span class="card-mark">02</span>
+          <h3>Dispute Resolution</h3>
+          <p>Practical support for resolving disagreements through negotiation, settlement discussions, mediation, or formal proceedings where needed.</p>
+        </article>
+        <article class="practice-card reveal">
+          <span class="card-mark">03</span>
+          <h3>Corporate Advisory</h3>
+          <p>Advice on corporate obligations, governance, transactions, regulatory concerns, and the legal structure behind commercial decisions.</p>
+        </article>
+        <article class="practice-card reveal">
+          <span class="card-mark">04</span>
+          <h3>Business Advisory</h3>
+          <p>Commercially grounded guidance for business owners and management teams on legal risk, strategy, and day-to-day operational issues.</p>
+        </article>
+        <article class="practice-card reveal">
+          <span class="card-mark">05</span>
+          <h3>Commercial Documentation</h3>
+          <p>Drafting and review of agreements, correspondence, settlement terms, and business documents that need legal precision.</p>
+        </article>
+        <article class="practice-card reveal">
+          <span class="card-mark">06</span>
+          <h3>Risk & Compliance</h3>
+          <p>Support for identifying legal exposure, strengthening internal processes, and making informed decisions before disputes escalate.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="why" id="approach">
+      <div>
+        <p class="section-label">Our Approach</p>
+        <h2 class="section-heading">Built for clarity, discretion, and <em>follow-through</em></h2>
+        <p class="section-intro">The goal is not just to answer a legal question. It is to help the client understand the decision in front of them, the risks around it, and the next move that best protects their position.</p>
+      </div>
+      <div class="why-list">
+        <article class="why-item reveal">
+          <div class="why-number">01</div>
+          <div>
+            <h3>Direct assessment</h3>
+            <p>We begin by identifying the legal issue, the practical objective, and the documents or facts that matter most.</p>
+          </div>
+        </article>
+        <article class="why-item reveal">
+          <div class="why-number">02</div>
+          <div>
+            <h3>Plain-language options</h3>
+            <p>Clients receive clear choices, likely timelines, key risks, and a practical view of what each route involves.</p>
+          </div>
+        </article>
+        <article class="why-item reveal">
+          <div class="why-number">03</div>
+          <div>
+            <h3>Careful execution</h3>
+            <p>Whether drafting, negotiating, or appearing in a dispute, the work is prepared with discipline and attention to detail.</p>
+          </div>
+        </article>
+        <article class="why-item reveal">
+          <div class="why-number">04</div>
+          <div>
+            <h3>Responsive communication</h3>
+            <p>Clients are kept informed, with next steps made visible and questions answered without unnecessary complexity.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="process">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-heading">A simple path from first conversation to <em>next action</em></h2>
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <div class="step-number">01</div>
+          <h3>Consult</h3>
+          <p>Share the issue, documents, and desired outcome so the matter can be scoped clearly from the start.</p>
+        </article>
+        <article class="process-step reveal">
+          <div class="step-number">02</div>
+          <h3>Plan</h3>
+          <p>Receive a practical view of options, likely risks, timelines, and the recommended way forward.</p>
+        </article>
+        <article class="process-step reveal">
+          <div class="step-number">03</div>
+          <h3>Act</h3>
+          <p>Move ahead with drafting, negotiation, filing, representation, or advisory support as the matter requires.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="faq-layout">
+        <div>
+          <p class="section-label">FAQ</p>
+          <h2 class="section-heading">Questions on disputes and <em>advisory work</em></h2>
+          <p class="section-intro">These answers relate to the firm's core work in litigation, dispute resolution, corporate advisory, and business advisory matters.</p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item open">
+            <button class="faq-question" type="button">What should I prepare for a litigation consultation?<span>+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Bring or send the pleadings, contracts, correspondence, notices, invoices, timelines, and any court or tribunal deadlines. A short summary of the dispute and your preferred outcome is also helpful.</div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button">Can a dispute be resolved without going to court?<span>+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Often, yes. Depending on the facts, a matter may be handled through negotiation, settlement correspondence, mediation, or other dispute resolution steps before formal litigation is necessary.</div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button">What does corporate and business advisory cover?<span>+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">It can include advice on business agreements, governance issues, commercial risk, regulatory obligations, internal processes, and practical legal steps before a decision or transaction is made.</div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button">Can you help review or draft business documents?<span>+</span></button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">Yes. The firm can assist with reviewing, drafting, and refining agreements, letters, settlement terms, corporate documents, and other business records that need legal clarity.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="section-label">Contact</p>
+      <h2>Talk to us about <em>your matter</em></h2>
+      <p class="section-intro">For appointments, document review, or urgent legal guidance, reach out with a short description of the issue and the best way to contact you.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Phone</h3>
+          <a href="tel:+6562251171">+65 6225 1171</a>
+          <p>For appointments and urgent enquiries</p>
+        </div>
+        <div class="contact-card">
+          <h3>Email</h3>
+          <a href="mailto:kumarlaw@singnet.com.sg">kumarlaw@singnet.com.sg</a>
+          <p>Send documents and a short case summary</p>
+        </div>
+        <div class="contact-card">
+          <h3>Office</h3>
+          <p>151 Chin Swee Road<br />Manhattan House #13-12<br />Singapore 169876</p>
+          <p>Visits by appointment</p>
+        </div>
+      </div>
+      <div class="button-row" style="justify-content:center">
+        <a href="mailto:kumarlaw@singnet.com.sg" class="button button-primary">Email The Firm</a>
+        <a href="tel:+6562251171" class="button button-secondary" style="color:var(--paper);border-color:rgba(247,242,234,.32)">Call Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">Vas Kumar & Co.</div>
+    <p>&copy; 2026 Vas Kumar & Co. All rights reserved.</p>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navLinks = document.getElementById("navLinks");
+    const backToTop = document.querySelector(".back-to-top");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      const button = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      if (item.classList.contains("open")) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+
+      button.addEventListener("click", () => {
+        const wasOpen = item.classList.contains("open");
+        document.querySelectorAll(".faq-item").forEach((other) => {
+          other.classList.remove("open");
+          other.querySelector(".faq-answer").style.maxHeight = null;
+        });
+        if (!wasOpen) {
+          item.classList.add("open");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("visible", window.scrollY > 500);
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
